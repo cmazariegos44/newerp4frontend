@@ -1,4 +1,4 @@
-<template>
+ <template>
   <div id="app">
     <div id="nav">
       <Header/>
@@ -6,22 +6,29 @@
       
     </div>
     <router-view/>
-    <Footer/>
+    <Footer> MY FOOTER UPDATED  <Footer/>
   </div>
 </template>
+
 
 <script>
 import Header from './components/Header'
 import Footer from './components/Footer'
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     Header,
-    Footer
-  }
-  
-}
+    Footer,
+  },
+  data: function() {
+    return {
+      loggedIn: false,
+      tokens: {},
+      URL: "https://newp4backend.herokuapp.com/auth/users/login/",
+    }
+ 
+}//END OF SCRIPT 
 </script>
 
 <style>
