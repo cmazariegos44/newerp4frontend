@@ -29,7 +29,7 @@ export default {
       URL: "https://newp4backend.herokuapp.com/auth/users/login/"
     };
 }//END OF SCRIPT 
-</script>,
+</script>
 
 <style>
 #app {
