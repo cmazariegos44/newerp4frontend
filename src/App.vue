@@ -25,7 +25,7 @@ export default {
     return {
       loggedIn: false,
       tokens: {},
-      URL: "https://newp4backend.herokuapp.com/auth/users/login/",
+      URL: "https://newp4backend.herokuapp.com/auth/users/login/"
     }
  
 }//END OF SCRIPT 
