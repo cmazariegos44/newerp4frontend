@@ -20,15 +20,15 @@ export default {
   components: {
     Header,
     Footer,
-  },
-  data: function() {
-    return {
-      loggedIn: false,
-      tokens: {},
-      URL: "https://newp4backend.herokuapp.com/auth/users/login/"
-    },
+  }
+//   data: function() {
+//     return {
+//       loggedIn: false,
+//       tokens: {},
+//       URL: "https://newp4backend.herokuapp.com/auth/users/login/"
+//     },
  
-};//END OF SCRIPT 
+// };//END OF SCRIPT 
 </script>
 
 <style>
