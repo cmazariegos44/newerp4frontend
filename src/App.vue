@@ -28,8 +28,8 @@ export default {
       tokens: {},
       URL: "https://newp4backend.herokuapp.com/auth/users/login/"
     };
-} //END OF SCRIPT 
-,
+} 
+};//END OF SCRIPT 
 </script>
 
 <style>
