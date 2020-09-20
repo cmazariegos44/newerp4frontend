@@ -21,15 +21,15 @@ export default {
     Header,
     Footer,
   }
-//   data: function() {
-//     return {
-//       loggedIn: false,
-//       tokens: {},
-//       URL: "https://newp4backend.herokuapp.com/auth/users/login/"
-//     },
- 
-// };//END OF SCRIPT 
-</script>
+
+  data: function() {
+    return {
+      loggedIn: false,
+      tokens: {},
+      URL: "https://newp4backend.herokuapp.com/auth/users/login/"
+    };
+}//END OF SCRIPT 
+</script>,
 
 <style>
 #app {
