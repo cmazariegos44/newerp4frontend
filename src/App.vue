@@ -1,13 +1,17 @@
- <template>
-  <div id="app">
-    <div id="nav">
-      <Header/>
-
-      
-    </div>
+<template>
+ <div id="app">
+    <!--<div id="nav"> -->
+    <Header v-bind:URL="URL" v-bind:loggedIn="loggedIn" @logout="logout" />
+    <router-view @loggedIn="login($event)" />  
+     <!--</div>-->
     <router-view/>
-    <Footer> MY FOOTER UPDATED  <Footer/>
+    <Footer/>
+  <div class="main">
+    <ul>
+      <li v-for="task of task" v-bind:key="task.id">{{ task.message }}</li>
+    </ul>
   </div>
+ </div>
 </template>
 
 
@@ -26,10 +30,53 @@ export default {
     return {
       loggedIn: false,
       tokens: {},
-      URL: "https://newp4backend.herokuapp.com/auth/users/login/"
+      URL: "https://newp4backend.herokuapp.com/auth/users/login/",
+      task: [],
+      // message: "",
+      // editmessage: "",
+      // editid: null
     };
-} 
-};//END OF SCRIPT 
+} ,
+methods: {
+    login: function(event) {
+      console.log("event heard");
+      this.loggedIn = true;
+      this.tokens = event;
+      this.$router.push("/"
+      //   {
+      //   path: "Main",
+      //   query: { tokens: this.tokens, URL: this.URL },
+      // }
+      );
+    },
+    logout: function() {
+      this.loggedIn = false;
+      this.tokens = {};
+      this.$router.push('/')
+    },
+    //==============================================================
+    //NEW TASK METHOD 
+     newTask: function() {
+      const { tokens, URL } = this.$route.query;
+
+      fetch(`${URL}/task/`, {
+        method: "post",
+        headers: {
+          authorization: `JWT ${tokens}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ message: this.message }),
+      }).then(() => {
+        this.getTask();
+      });
+    },
+
+
+  },//END OF METHOD 
+
+
+
+};//END OF EXPORT DEFAULT 
 </script>
 
 <style>
